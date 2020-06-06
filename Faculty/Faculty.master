@@ -122,8 +122,8 @@
                             </a>
                         </li> 
                          <li> 
-                            <a href="#">
-                               <i class="fa fa-star"></i> <span>Feedbacks</span>
+                            <a href="ViewFeedBackAnswer.aspx">
+                               <i class="fa fa-star"></i> <span>View Feedback Answer</span>
                             </a>
                         </li> 
                          <li> 

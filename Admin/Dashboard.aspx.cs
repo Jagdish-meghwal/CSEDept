@@ -29,6 +29,7 @@ public partial class admin_Dashboard : System.Web.UI.Page
             faculty.InnerText = csedeptm.ExecuteScalar("select count(*) from FacultyTbl where IsActive='1'");
             students.InnerText = csedeptm.ExecuteScalar("select count (*) from StudentTbl where IsActive ='1'");
             subjects.InnerText = csedeptm.ExecuteScalar("select count (*) from SubjectTbl where IsActive ='1'");
+            questions.InnerText = csedeptm.ExecuteScalar("select count (*) from FeedBackQuesTbl where IsActive ='1'");
         }
         catch (Exception )
         { }

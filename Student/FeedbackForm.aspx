@@ -19,7 +19,8 @@
                
                 <!-- general form elements disabled -->
                     
-                    <div class="box-body">                                        
+                    <div class="box-body">  
+                        <h4 id="feedbackheading" runat="server"></h4>
                         <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto">
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">  
                                 <ContentTemplate> 
@@ -33,15 +34,16 @@
                                                         <span><%# Container.DataItemIndex +1 %></span>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                <asp:BoundField DataField="RollNo" HeaderText="Roll No">
-                                                    <ItemStyle Font-Size="Medium" />
-                                                </asp:BoundField>              
-                                                <asp:BoundField DataField="Name" HeaderText="Student Name">
+                                               
+                                                
+                                                 <asp:BoundField DataField="FeedBackQues" HeaderText="FeedBackQues">
+                                                       
                                                     <ItemStyle Font-Size="Medium" />
                                                 </asp:BoundField>
                                                 <asp:TemplateField HeaderText="Excellent (81 to 100%)">
                                                     <ItemTemplate>
-                                                        <asp:HiddenField ID="hdStudentID" runat="server" Value='<%#Eval("StudentID") %>'></asp:HiddenField>
+                                                       
+                                                        <asp:HiddenField ID="hdQuestionID" runat="server" Value='<%#Eval("ID") %>'></asp:HiddenField>
                                                        
                                                         <asp:RadioButton ID="rdexecellent" runat="server" GroupName="feedback"/>
                                                     </ItemTemplate>

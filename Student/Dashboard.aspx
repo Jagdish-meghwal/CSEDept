@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Faculty/Faculty.master" AutoEventWireup="true" CodeFile="Dashboard.aspx.cs" Inherits="Faculty_Dashboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Student.master" AutoEventWireup="true" CodeFile="Dashboard.aspx.cs" Inherits="Student_Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <!-- Content Header (Page header) -->
+      <!-- Content Header (Page header) -->
     <div class="content-header">
         <h1>Dashboard<small></small></h1>
             <ol class="breadcrumb">
@@ -20,61 +20,72 @@
                 <!-- small box -->
                  <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3 id="students" runat="server">0</h3>
-                        <p> Total Registered Students</p>
+                       
+                        <p> View Internal Marks</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-eye"></i>
                     </div>
-                    <a href="ManageStudents.aspx" class="small-box-footer">
+                    <a href="MyInternalMarks.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col --> 
-
-            <div class="col-lg-3 col-xs-6">
+             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                  <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>Hello</h3>
-                        <p> Take Attendace</p>
+                        <p> View Attendace</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-check-square-o"></i>
+                        <i class="fa fa-eye"></i>
                     </div>
-                    <a href="Attendance.aspx" class="small-box-footer">
+                    <a href="myAttendance.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col --> 
-
              <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                  <div class="small-box bg-red-gradient">
                     <div class="inner">
-                        <h3>Hello</h3>
-                        <p> Upload Marks</p>
+                       
+                        <p>Answer Feedback </p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-list"></i>
                     </div>
-                    <a href="FillMarks.aspx" class="small-box-footer">
+                    <a href="FeedbackForm.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col --> 
-
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                 <div class="small-box bg-green">
+                 <div class="small-box bg-teal">
                     <div class="inner">
-                        <h3>Hello</h3>
-                        <p> View Feedback Answers</p>
+                       
+                        <p>View Feedback Answer</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-list"></i>
                     </div>
-                    <a href="ViewFeedBackAnswer.aspx" class="small-box-footer">
+                    <a href="ViewFeedBack.aspx" class="small-box-footer">
+                        View Details <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div><!-- ./col --> 
+             <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                 <div class="small-box bg-green">
+                    <div class="inner">
+                       
+                        <p> Change Password</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <a href="changePassword.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>

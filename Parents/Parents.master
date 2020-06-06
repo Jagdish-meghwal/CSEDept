@@ -1,11 +1,11 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Student.master.cs" Inherits="Student_Student" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Parents.master.cs" Inherits="Parents_Parents" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <meta charset="UTF-8">
-        <title>CSE Dept Student| GITS</title>
+     <meta charset="UTF-8">
+        <title>CSE Dept Parents| GITS</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
         <!-- bootstrap 3.0.2 -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -47,7 +47,7 @@
         <header class="header">
             <a href="Dashboard.aspx" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-            	<img src="../assets/images/logo.png" alt="Student Cse Dept" height="44" />
+            	<img src="../assets/images/logo.png" alt="Parent Cse Dept" height="44" />
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -91,25 +91,16 @@
                        
                                <li>
                             <a href="MyInternalMarks.aspx">
-                                <i class="fa fa-list"></i> <span>My Internal Marks</span>
+                                <i class="fa fa-list"></i> <span>Ward Internal Marks</span>
                             </a>
                         </li> 
                         <li>
                             <a href="myAttendance.aspx">
-                               <i class="fa fa-list"></i> <span>My Attendance</span>
+                               <i class="fa fa-list"></i> <span>Ward Attendance</span>
                             </a>
                         </li>
                       
-                         <li> 
-                            <a href="FeedbackForm.aspx">
-                               <i class="fa fa-star"></i> <span>Feedbacks</span>
-                            </a>
-                        </li> 
-                         <li> 
-                            <a href="ViewFeedBack.aspx">
-                               <i class="fa fa-star"></i> <span>View Feedback Answer</span>
-                            </a>
-                        </li> 
+                      
                          <li> 
                             <a href="changePassword.aspx">
                                 <i class="fa fa-cog"></i> <span>Change Password</span>

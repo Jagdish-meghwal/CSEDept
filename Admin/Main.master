@@ -95,20 +95,42 @@
                             </a>
                         </li>
 
-                           <li> 
+                         <li class="treeview">
+                            <a href=""><i class="fa fa-list"></i><span> Management</span><i class="fa fa-angle-left pull-right"></i></a>
+                             <ul class="treeview-menu">
+                                  <li> 
                             <a href="ManageYear.aspx">
-                               <i class="fa fa-list"></i> <span>Manage Year</span>
-                            </a>
-                        </li>
+                                   <i class="fa fa-list"></i> <span>Manage Year</span>
+                                </a>
+                            </li>
 
-                        <li> 
-                            <a href="ManageSemester.aspx">
-                               <i class="fa fa-list"></i> <span>Manage Semester</span>
-                            </a>
-                        </li>
+                            <li> 
+                                <a href="ManageSemester.aspx">
+                                   <i class="fa fa-list"></i> <span>Manage Semester</span>
+                                </a>
+                            </li>
+                                    <li> 
+                                    <a href="ManageSubjects.aspx">
+                                       <i class="fa fa-book"></i> <span>Manage Subjects</span>
+                                    </a>
+                                </li>
+                                   <li> 
+                                    <a href="ManageFeedBackQues.aspx">
+                                       <i class="fa fa-list"></i> <span>Manage Feedback Question</span>
+                                    </a>
+                                </li> 
+                             </ul>
+                         </li> 
+
+                       
                                <li>
                             <a href="ManageStudents.aspx">
                                 <i class="fa fa-users"></i> <span>Student List</span>
+                            </a>
+                        </li>
+                            <li>
+                            <a href="ParentsList.aspx">
+                               <i class="fa fa-users"></i> <span>Parents List</span>
                             </a>
                         </li> 
                         <li>
@@ -121,17 +143,9 @@
                                <i class="fa fa-eye"></i> <span>View Attendance</span>
                             </a>
                         </li>
-                         <li>
-                            <a href="ParentsList.aspx">
-                               <i class="fa fa-users"></i> <span>Parents List</span>
-                            </a>
-                        </li>    
+                        
                       
-                        <li> 
-                            <a href="ManageSubjects.aspx">
-                               <i class="fa fa-book"></i> <span>Manage Subjects</span>
-                            </a>
-                        </li>
+                     
                         <li>
                             <a href="FillMarks.aspx">
                                <i class="fa fa-list"></i> <span>Upload Marks</span>
@@ -142,14 +156,10 @@
                                <i class="fa fa-eye"></i> <span>View Uploaded Marks</span>
                             </a>
                         </li> 
+                       
                          <li> 
-                            <a href="ManageFeedBackQues.aspx">
-                               <i class="fa fa-list"></i> <span>Manage Feedback Question</span>
-                            </a>
-                        </li> 
-                         <li> 
-                            <a href="#">
-                               <i class="fa fa-star"></i> <span>Feedbacks</span>
+                            <a href="ViewFeedBackAnswer.aspx">
+                               <i class="fa fa-star"></i> <span>View Feedbacks</span>
                             </a>
                         </li> 
                          <li> 

@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="admin_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Parents_Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	
-	<title>CSE DEPARTMENT</title>
+	<title>CSE DEPARTMENT | PARENTS</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/login/css/login.css" rel="stylesheet" />
     <link href="../assets/login/css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -20,11 +20,10 @@
     <![endif]-->
     
      <script src="../assets/login/js/custom.modernizr.html" type="text/javascript" ></script>
-   
 </head>
 <body>
     <form id="form1" runat="server">
-   <!-- start Login box -->
+     <!-- start Login box -->
     	<div class="container" id="login-block">
     		<div class="row">
 			    <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">			    	 
@@ -37,25 +36,18 @@
 			        	</div> 
 			        	<hr />
 			        	<div class="login-form">
-			        		<%--<div class="alert alert-error hide">
+			        		<div class="alert alert-error hide">
 								  <button type="button" class="close" data-dismiss="alert">&times;</button>
 								  <h4>Error!</h4>
 								   Your Error Message goes here
-							</div>--%>
+							</div>
 			        		<div action="#" method="get" style="text-align:center;">
-                                <h2 class="text-center">CSE Department</h2><br />
-                                <div class="col-md-12">
-                                    <a href="AdminLogin.aspx" class="btn btn-primary">Admin</a>
-                                </div><br />
-                                <div class="col-md-12">
-                                    <a href="../Faculty/Default.aspx" class="btn btn-primary">Faculty</a>
-                                </div><br />
-                                <div class="col-md-12">
-                                    <a href="../Parents/ParentLogin.aspx" class="btn btn-primary">Parents</a>
-                                </div><br />
-                                <div class="col-md-12">
-                                <a href="../Student/StudentLogin.aspx" class="btn btn-primary">Student</a>
-                                </div>
+                                <h2 class="text-center">CSE Department (Parents)</h2><br />
+                             
+                                 <asp:TextBox ID="txtUserName" placeholder="User Name" class="input-field" required="require" runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtPassword" TextMode="Password" placeholder="Password" class="input-field" required="require" runat="server"></asp:TextBox>                                 
+                                    <asp:Button ID="btnLogin" class="btn btn-login" runat="server" Text="Login" 
+                                     onclick="btnLogin_Click" /> 
 							</div>								     		
 			        	</div> 			        	
 			       </div>

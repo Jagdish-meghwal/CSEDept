@@ -61,21 +61,21 @@
             </div><!-- ./col --> 
            
        
-              <%-- <div class="col-lg-3 col-xs-6">
+               <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3 id="deliveredorder" runat="server">0</h3>
-                        <p>Delivered Orders</p>
+                        <h3 id="questions" runat="server">0</h3>
+                        <p>Total FeedBack Ouestions</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-check-square-o"></i>
+                        <i class="fa fa-star"></i>
                     </div>
-                    <a href="AllDeliveredOrders.aspx" class="small-box-footer">
+                    <a href="ManageFeedBackQues.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
-            </div>--%><!-- ./col -->                                     
+            </div><!-- ./col -->                                     
         </div>                 
     </div>
 </asp:Content>
