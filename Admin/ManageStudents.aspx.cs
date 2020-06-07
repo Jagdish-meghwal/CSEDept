@@ -20,6 +20,9 @@ public partial class Admin_ManageStudents : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
+                getAllDepts();
+                getAllYears();
+                getAllSems();
                 getAllStudents();
             }
             msgFails.Visible = false;
@@ -32,6 +35,79 @@ public partial class Admin_ManageStudents : System.Web.UI.Page
             Response.Redirect("Default.aspx");
         }
     }
+
+    public void getAllDepts()
+    {
+        try
+        {
+            ddlStudentDepartment.DataSource = csedept.SelectQuery("Select ID, DepartmentName from DepartmentTbl order by DepartmentName asc");
+            ddlStudentDepartment.DataValueField = "ID";
+            ddlStudentDepartment.DataTextField = "DepartmentName";
+            ddlStudentDepartment.DataBind();
+            ddlStudentDepartment.Items.Insert(0, new ListItem("------------Select Department-------------", "0"));
+
+            ddldept.DataSource = csedept.SelectQuery("Select ID, DepartmentName from DepartmentTbl order by DepartmentName asc");
+            ddldept.DataValueField = "ID";
+            ddldept.DataTextField = "DepartmentName";
+            ddldept.DataBind();
+            ddldept.Items.Insert(0, new ListItem("------------Select Department-------------", "0"));
+        }
+        catch (Exception)
+        { }
+    }
+
+
+    public void getAllYears()
+    {
+        try
+        {
+            ddlStudentYear.DataSource = csedept.SelectQuery("Select YrID, Year from YearTbl where IsActive='1' order by Year asc");
+            ddlStudentYear.DataValueField = "YrID";
+            ddlStudentYear.DataTextField = "Year";
+            ddlStudentYear.DataBind();
+            ddlStudentYear.Items.Insert(0, new ListItem("------------Select Year-------------", "0"));
+        }
+        catch (Exception)
+        { }
+    }
+
+
+    public void getAllSems()
+    {
+        try
+        {
+            ddlStudentSemester.DataSource = csedept.SelectQuery("Select SemID, Semester from SemesterTbl where YearID = '" + ddlStudentYear.SelectedValue + "' and IsActive='1' order by Semester asc");
+            ddlStudentSemester.DataValueField = "SemID";
+            ddlStudentSemester.DataTextField = "Semester";
+            ddlStudentSemester.DataBind();
+            ddlStudentSemester.Items.Insert(0, new ListItem("------------Select Semester-------------", "0"));
+        }
+        catch (Exception)
+        { }
+    }
+    protected void ddlStudentYear_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            try
+            {
+                if (ddlStudentYear.SelectedValue != "0")
+                {
+                    getAllSems();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                msgFails.InnerText = ex.Message;
+                msgFails.Visible = true;
+            }
+        }
+        catch (Exception)
+        { }
+    }
+
+
     public void getAllStudents()
     {
         try
@@ -84,7 +160,7 @@ public partial class Admin_ManageStudents : System.Web.UI.Page
             if (confirmValue == "Yes")
             {
                 string StudentID = grdDetails.Rows[e.RowIndex].Cells[3].Text;
-                csedept.ExecuteQuery("Update StudentTbl set IsActive='1', ModifiedDate='" + dateNow + "' where ID='" + StudentID + "'");
+                csedept.ExecuteQuery("Update StudentTbl set IsActive='0', ModifiedDate='" + dateNow + "' where ID='" + StudentID + "'");
                 csedept.ClearInputs(Page.Controls);
                 getAllStudents();
                 msgsuccess.Visible = true;
@@ -232,7 +308,7 @@ public partial class Admin_ManageStudents : System.Web.UI.Page
         try
         {
             DataTable dt = new DataTable();
-            dt = csedept.SelectQuery("Select StudentTbl.RollNo, StudentTbl.Name, DepartmentTbl.DepartmentName, StudentTbl.FathersName, StudentTbl.MothersName, StudentTbl.EmailID, StudentTbl.ContactNo, StudentTbl.FathersContactNo, StudentTbl.MothersContactNo, StudentTbl.ParentsLoginPassword, StudentTbl.Password, StudentTbl.Address, StudentTbl.Year, StudentTbl.Semester, StudentTbl.Photo, StudentTbl.CreateDate, StudentTbl.ModifiedDate from StudentTbl inner join DepartmentTbl on StudentTbl.DeptID = DepartmentTbl.ID where StudentTbl.IsActive='1'");
+            dt = csedept.SelectQuery("Select StudentTbl.RollNo, StudentTbl.Name, DepartmentTbl.DepartmentName, StudentTbl.FathersName, StudentTbl.MothersName, StudentTbl.EmailID, StudentTbl.ContactNo, StudentTbl.FathersContactNo, StudentTbl.MothersContactNo, StudentTbl.ParentsLoginPassword, StudentTbl.Password, StudentTbl.Address, StudentTbl.Year, StudentTbl.Semester, StudentTbl.CreateDate, StudentTbl.ModifiedDate from StudentTbl inner join DepartmentTbl on StudentTbl.DeptID = DepartmentTbl.ID where StudentTbl.IsActive='1'");
             using (XLWorkbook wb = new XLWorkbook())
             {
                 wb.Worksheets.Add(dt, "StudentTbl");

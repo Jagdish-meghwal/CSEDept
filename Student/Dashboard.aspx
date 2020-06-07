@@ -20,7 +20,7 @@
                 <!-- small box -->
                  <div class="small-box bg-aqua">
                     <div class="inner">
-                       
+                       <h3>Hello</h3>
                         <p> View Internal Marks</p>
                     </div>
                     <div class="icon">
@@ -35,6 +35,7 @@
                 <!-- small box -->
                  <div class="small-box bg-yellow">
                     <div class="inner">
+                        <h3>Hello</h3>
                         <p> View Attendace</p>
                     </div>
                     <div class="icon">
@@ -49,7 +50,7 @@
                 <!-- small box -->
                  <div class="small-box bg-red-gradient">
                     <div class="inner">
-                       
+                       <h3>Hello</h3>
                         <p>Answer Feedback </p>
                     </div>
                     <div class="icon">
@@ -64,7 +65,7 @@
                 <!-- small box -->
                  <div class="small-box bg-teal">
                     <div class="inner">
-                       
+                       <h3>Hello</h3>
                         <p>View Feedback Answer</p>
                     </div>
                     <div class="icon">
@@ -79,7 +80,7 @@
                 <!-- small box -->
                  <div class="small-box bg-green">
                     <div class="inner">
-                       
+                       <h3>Hello</h3>
                         <p> Change Password</p>
                     </div>
                     <div class="icon">

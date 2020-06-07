@@ -40,45 +40,34 @@
             <span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Upload Students List from Excel</h4>
         </div>
-        <div class="modal-body">
-            <div class="form-group">                          
-                    <label>Department :</label>
-                    <asp:DropDownList ID="ddlStudentDepartment" CssClass="form-control" runat="server">
-                        <asp:ListItem Text="-------Select Department------" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="CSE" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="EE" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="EEE" Value="3"></asp:ListItem>
-                    </asp:DropDownList>    
+        <asp:UpdatePanel ID="panel" runat="server">
+            <ContentTemplate>
+                <div class="modal-body">
+                    <div class="form-group">                          
+                            <label>Department :</label>
+                            <asp:DropDownList ID="ddlStudentDepartment" CssClass="form-control" runat="server">
+                       
+                            </asp:DropDownList>    
+                        </div>
+                         <div class="form-group">                          
+                            <label>Year :</label>
+                            <asp:DropDownList ID="ddlStudentYear" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStudentYear_SelectedIndexChanged">
+                       
+                            </asp:DropDownList>    
+                        </div>
+                    <div class="form-group">                          
+                            <label>Semester :</label>
+                            <asp:DropDownList ID="ddlStudentSemester" CssClass="form-control" runat="server">
+                        
+                            </asp:DropDownList>
+                        </div>
+                <div class="form-group">                          
+                    <label>Select Excel file :</label>
+                    <asp:FileUpload ID="flpFile" runat="server" /> 
+                </div> 
                 </div>
-                 <div class="form-group">                          
-                    <label>Year :</label>
-                    <asp:DropDownList ID="ddlStudentYear" CssClass="form-control" runat="server">
-                        <asp:ListItem Text="-------Select Year------" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                    </asp:DropDownList>    
-                </div>
-            <div class="form-group">                          
-                    <label>Semester :</label>
-                    <asp:DropDownList ID="ddlStudentSemester" CssClass="form-control" runat="server">
-                        <asp:ListItem Text="-------Select Semester------" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                        <asp:ListItem Text="6" Value="6"></asp:ListItem>
-                        <asp:ListItem Text="7" Value="7"></asp:ListItem>
-                        <asp:ListItem Text="8" Value="8"></asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-        <div class="form-group">                          
-            <label>Select Excel file :</label>
-            <asp:FileUpload ID="flpFile" runat="server" /> 
-        </div> 
-        </div>
+             </ContentTemplate>
+        </asp:UpdatePanel>
         <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
         <asp:Button ID="btnUpload" CssClass="btn btn-primary" runat="server" Text="Upload" 
@@ -127,10 +116,7 @@
                 <div class="form-group">                          
                     <label>Department :</label>
                     <asp:DropDownList ID="ddldept" CssClass="form-control" runat="server">
-                        <asp:ListItem Text="-------Select Department------" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="CSE" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="EE" Value="2"></asp:ListItem>
-                        <asp:ListItem Text="EEE" Value="3"></asp:ListItem>
+                      
                     </asp:DropDownList>      
                     <asp:RequiredFieldValidator ID="req1" runat="server" ErrorMessage="Select Department" ControlToValidate="ddldept" Display="Dynamic" InitialValue="0">
                     </asp:RequiredFieldValidator>  

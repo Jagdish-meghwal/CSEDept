@@ -82,7 +82,7 @@
                 <i class="fa fa-edit"></i> Add New Faculty
             </asp:LinkButton>
             <button type="button" class="btn btn-facebook" data-toggle="modal" data-target="#modal-update">
-                Upload Product from Excel
+                Upload Faculty from Excel
             </button>
         </div>
     </div>

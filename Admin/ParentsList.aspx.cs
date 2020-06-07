@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -90,7 +93,34 @@ public partial class Admin_ParentsList : System.Web.UI.Page
         catch (Exception)
         { }
     }
-    
+    protected void btnAllExport_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+            dt = csedept.SelectQuery("SELECT DepartmentTbl.DepartmentName, StudentTbl.RollNo, StudentTbl.Name, StudentTbl.FathersName, StudentTbl.MothersName, StudentTbl.FathersContactNo, StudentTbl.MothersContactNo, StudentTbl.ContactNo, StudentTbl.Year, StudentTbl.Semester from StudentTbl inner join DepartmentTbl on StudentTbl.DeptID = DepartmentTbl.ID where StudentTbl.Year = '" + ddlStudentYear.SelectedValue + "' and StudentTbl.Semester = '" + ddlStudentSemester.SelectedValue + "' and StudentTbl.DeptID = '" + ddlStudentDepartment.SelectedValue + "' and StudentTbl.IsActive = '1'");
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "ParentsTbl");
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                string fileName = "ParentsTbl" + DateTime.Now.ToString("dd-MMM-yyyy") + ".xlsx";
+                Response.AddHeader("content-disposition", "attachment;filename=" + fileName + "");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+        catch (Exception ex)
+        { }
+    }
+
     protected void grdDetails_RowDataBound(object sender, GridViewRowEventArgs e)
     {
         try
@@ -115,6 +145,7 @@ public partial class Admin_ParentsList : System.Web.UI.Page
             {
                 listheading.InnerText = "All Parents List";
                 listheading.Visible = true;
+                btnAllExport.Visible = true;
             }
             else
             {

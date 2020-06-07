@@ -20,8 +20,8 @@
                 <!-- small box -->
                  <div class="small-box bg-aqua">
                     <div class="inner">
-                       
-                        <p> View Internal Marks</p>
+                       <h3>Hello</h3>
+                        <p> View Ward Internal Marks</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-eye"></i>
@@ -35,7 +35,8 @@
                 <!-- small box -->
                  <div class="small-box bg-yellow">
                     <div class="inner">
-                        <p> View Attendace</p>
+                        <h3>Hello</h3>
+                        <p> View Ward Attendace</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-eye"></i>
@@ -50,7 +51,7 @@
                 <!-- small box -->
                  <div class="small-box bg-green">
                     <div class="inner">
-                       
+                       <h3>Hello</h3>
                         <p> Change Password</p>
                     </div>
                     <div class="icon">

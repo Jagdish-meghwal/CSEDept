@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class Faculty_FillMarks : System.Web.UI.Page
 {
+
     dbcode csedept = new dbcode();
     Auto id = new Auto();
     string DateNow = DateTime.Now.ToString("yyyy-MM-dd hh:mm tt");
@@ -28,8 +29,7 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
                 getAllSems();
 
             }
-
-
+            
         }
         catch (Exception)
         {
@@ -116,21 +116,22 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
     }
 
 
+
     protected void btnSave_Click(object sender, EventArgs e)
     {
         try
         {
-            //string pid = Request.QueryString["pid"];
+            
             foreach (GridViewRow row in grdProfileData.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
                 {
-                    //csedept.ReplaceChr(Page.Controls);
+                    
 
                     TextBox txtfirstmarks = row.FindControl("txtfirstmarks") as TextBox;
                     TextBox txtsecondmarks = row.FindControl("txtsecondmarks") as TextBox;
                     TextBox txtavg = row.FindControl("txtavg") as TextBox;
-                    //DropDownList ddlPosition = row.FindControl("ddlPosition") as DropDownList;
+                    
                     TextBox txtassigmarks = row.FindControl("txtassigmarks") as TextBox;
                     TextBox txttotalmarks = row.FindControl("txttotalmarks") as TextBox;
                     HiddenField hdStudentID = row.FindControl("hdStudentID") as HiddenField;
@@ -145,7 +146,7 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
                     }
                 }
             }
-            msgsuccess.Visible = true;
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Well done! You have successfully Done Operation.');window.location='ViewUploadedMarks.aspx';", true);
             ddlStudentDepartment.ClearSelection();
             ddlStudentSemester.ClearSelection();
             ddlStudentYear.ClearSelection();
@@ -166,12 +167,10 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
             TextBox txt = (TextBox)sender;
             GridViewRow gvr = (GridViewRow)txt.NamingContainer;
             TextBox txtfirstmarks = (TextBox)gvr.FindControl("txtfirstmarks");
-            //HiddenField hdFirstMaxMarks = gvr.FindControl("hdFirstMaxMarks") as HiddenField;
+           
             TextBox txtsecondmarks = (TextBox)gvr.FindControl("txtsecondmarks");
-            //HiddenField hdSecondMaxMarks = gvr.FindControl("hdSecondMaxMarks") as HiddenField;
             TextBox txtavg = (TextBox)gvr.FindControl("txtavg");
             TextBox txtassigmarks = (TextBox)gvr.FindControl("txtassigmarks");
-            //HiddenField hdAssigmarks = gvr.FindControl("hdAssigmarks") as HiddenField;
             TextBox txttotalmarks = (TextBox)gvr.FindControl("txttotalmarks");
             if (txtfirstmarks.Text == "")
             {
@@ -206,13 +205,7 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
 
             double totalmarks = assmarks + resultavg;
             txttotalmarks.Text = totalmarks.ToString();
-
-            //foreach (GridViewRow row in grdProfileData.Rows)
-            //{
-            //    TextBox txtTotal1 = (TextBox)row.FindControl("txtTotal");
-            //    result1 = result1 + double.Parse(txtTotal1.Text);
-            //}
-            //Total.InnerText = result1.ToString();
+            
         }
         catch (Exception) { }
     }
@@ -222,12 +215,10 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
         TextBox txt = (TextBox)sender;
         GridViewRow gvr = (GridViewRow)txt.NamingContainer;
         TextBox txtfirstmarks = (TextBox)gvr.FindControl("txtfirstmarks");
-        //HiddenField hdFirstMaxMarks = gvr.FindControl("hdFirstMaxMarks") as HiddenField;
+       
         TextBox txtsecondmarks = (TextBox)gvr.FindControl("txtsecondmarks");
-        //HiddenField hdSecondMaxMarks = gvr.FindControl("hdSecondMaxMarks") as HiddenField;
         TextBox txtavg = (TextBox)gvr.FindControl("txtavg");
         TextBox txtassigmarks = (TextBox)gvr.FindControl("txtassigmarks");
-        //HiddenField hdAssigmarks = gvr.FindControl("hdAssigmarks") as HiddenField;
         TextBox txttotalmarks = (TextBox)gvr.FindControl("txttotalmarks");
 
         if (txtfirstmarks.Text == "")
@@ -270,12 +261,9 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
         TextBox txt = (TextBox)sender;
         GridViewRow gvr = (GridViewRow)txt.NamingContainer;
         TextBox txtfirstmarks = (TextBox)gvr.FindControl("txtfirstmarks");
-        //HiddenField hdFirstMaxMarks = gvr.FindControl("hdFirstMaxMarks") as HiddenField;
         TextBox txtsecondmarks = (TextBox)gvr.FindControl("txtsecondmarks");
-        //HiddenField hdSecondMaxMarks = gvr.FindControl("hdSecondMaxMarks") as HiddenField;
         TextBox txtavg = (TextBox)gvr.FindControl("txtavg");
         TextBox txtassigmarks = (TextBox)gvr.FindControl("txtassigmarks");
-        //HiddenField hdAssigmarks = gvr.FindControl("hdAssigmarks") as HiddenField;
         TextBox txttotalmarks = (TextBox)gvr.FindControl("txttotalmarks");
 
         if (txtfirstmarks.Text == "")
@@ -325,6 +313,7 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
                 grdProfileData.DataSource = csedept.SelectQuery("select FillMarksTbl.ID,FillMarksTbl.StudentID, StudentTbl.RollNo, StudentTbl.Name, StudentTbl.FathersName,  FillMarksTbl.FirstMidMarks, FillMarksTbl.SecondMidMarks, FillMarksTbl.AvgMidMarks, FillMarksTbl.AssiMarks, FillMarksTbl.TotalMarks from FillMarksTbl inner join StudentTbl on FillMarksTbl.StudentID = StudentTbl.ID where FillMarksTbl.SubID = '" + ddlSubjects.SelectedValue + "' and StudentTbl.DeptID = '" + ddlStudentDepartment.SelectedValue + "' and StudentTbl.Year = '" + ddlStudentYear.SelectedValue + "' and StudentTbl.Semester = '" + ddlStudentSemester.SelectedValue + "' and StudentTbl.IsActive='1' and FillMarksTbl.IsActive='1'");
                 grdProfileData.DataBind();
                 btnSave.Text = "Update";
+
             }
             else
             {
@@ -349,6 +338,5 @@ public partial class Faculty_FillMarks : System.Web.UI.Page
         catch (Exception)
         { }
     }
-
 
 }

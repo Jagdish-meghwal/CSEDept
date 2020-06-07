@@ -26,10 +26,8 @@
             </div>
                
                 <!-- general form elements disabled -->
-                <div class="box box-primary" style="height:200px;">
-                    <%--<div class="box-header">
-                        <h3 class="box-title">Cutting Size of "<span id="productName" runat="server"></span>"</h3> 
-                    </div>--%><!-- /.box-header -->
+                <div class="box box-primary" style="height:180px;">
+                   
                        <div class="row" style="padding:10px;">
                     <div  class="col-md-6">
                         <div class="form-group"> 
@@ -72,7 +70,9 @@
                         <asp:Button ID="btnSearch" CssClass="btn btn-success" runat="server" Text="Search" onclick="btnSearch_Click"></asp:Button>
                     </div>
                 </div>    
-                    <div class="box-body">                                        
+                <div class="box box-primary">
+                    <div class="box-body">  
+                         
                         <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto">
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">  
                                 <ContentTemplate> 
@@ -98,14 +98,14 @@
                                                 <asp:TemplateField HeaderText="I-MID (out of 10)">
                                                     <ItemTemplate>
                                                         <asp:HiddenField ID="hdStudentID" runat="server" Value='<%#Eval("StudentID") %>'></asp:HiddenField>
-                                                        <%--<asp:HiddenField ID="hdFirstMaxMarks" runat="server" Value='<%#Eval("FirstMidMaxMarks") %>'></asp:HiddenField>--%>
+                                                     
                                                         <asp:TextBox ID="txtfirstmarks" CssClass="form-control" runat="server" Text='<%#Eval("FirstMidMarks") %>' AutoPostBack="true" OnTextChanged="txtfirstmarks_TextChanged">
                                                         </asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>        
                                                 <asp:TemplateField HeaderText="II-MID (out of 10)">
                                                     <ItemTemplate>
-                                                      <%-- <asp:HiddenField ID="hdSecondMaxMarks" runat="server" Value='<%#Eval("SecMidMaxMarks") %>'></asp:HiddenField>--%>
+                                                   
                                                         <asp:TextBox ID="txtsecondmarks" CssClass="form-control"  AutoPostBack="true" OnTextChanged="txtsecondmarks_TextChanged" runat="server" Text='<%#Eval("SecondMidMarks") %>'>
                                                         </asp:TextBox>
                                                     </ItemTemplate>
@@ -119,7 +119,7 @@
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="ASSIGNMENT (out of 10)">
                                                     <ItemTemplate>
-                                                         <%--<asp:HiddenField ID="hdAssigmarks" runat="server" Value='<%#Eval("AssiMaxMarks") %>'></asp:HiddenField>--%>
+                                                         
                                                         <asp:TextBox ID="txtassigmarks" CssClass="form-control" runat="server"  AutoPostBack="true" OnTextChanged="txtassigmarks_TextChanged" Text='<%#Eval("AssiMarks") %>'>
                                                         </asp:TextBox>
                                                     </ItemTemplate>
@@ -130,11 +130,7 @@
                                                         <asp:TextBox ID="txttotalmarks" CssClass="form-control" runat="server" Enabled="false" Text='<%#Eval("TotalMarks") %>'>
                                                         </asp:TextBox>
                                                     </ItemTemplate>
-                                                   <%-- <FooterStyle HorizontalAlign="Left" />
-                                                    <FooterTemplate>
-                                                        <asp:Button ID="ButtonAdd" runat="server" Text="Add New Row" CausesValidation="false" 
-                                                        formnovalidate  onclick="ButtonAdd_Click"/>
-                                                    </FooterTemplate>--%>
+                                                 
                                                 </asp:TemplateField>                                 
                                             </Columns>
                                         </asp:GridView>
@@ -147,9 +143,10 @@
                         <asp:Button ID="btnSave"  CssClass="btn btn-primary" runat="server" Text="Save" OnClick="btnSave_Click"/>
                        
                     </div>  
+                    </div>
+                    
                 </div><!-- /.box -->
-            </div><!--/.col (right) -->     
-        </div>
+            </div><!--/.col (right) -->  
     </section>
 </asp:Content>
 

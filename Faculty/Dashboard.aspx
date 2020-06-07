@@ -72,7 +72,7 @@
                         <p> View Feedback Answers</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-list"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                     <a href="ViewFeedBackAnswer.aspx" class="small-box-footer">
                         View Details <i class="fa fa-arrow-circle-right"></i>

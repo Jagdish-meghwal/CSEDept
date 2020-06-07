@@ -89,38 +89,55 @@
                          </li> 
 
                        
-                               <li>
+                        <li>
                             <a href="ManageStudents.aspx">
                                 <i class="fa fa-users"></i> <span>Student List</span>
                             </a>
-                        </li> 
-                        <li>
-                            <a href="Attendance.aspx">
-                               <i class="fa fa-check-square-o"></i> <span>Take Attendance</span>
-                            </a>
                         </li>
-                          <li>
-                            <a href="ViewAttendance.aspx">
-                               <i class="fa fa-eye"></i> <span>View Attendance</span>
-                            </a>
-                        </li>
+                        
+                        <li class="treeview">
+                            <a href=""><i class="fa fa-th-large"></i><span>Attendance Mngt</span><i class="fa fa-angle-left pull-right"></i></a>
+                             <ul class="treeview-menu">
+                                <li>
+                                    <a href="Attendance.aspx">
+                                       <i class="fa fa-check-square-o"></i> <span>Take Attendance</span>
+                                    </a>
+                                </li>
+                                  <li>
+                                    <a href="ViewAttendance.aspx">
+                                       <i class="fa fa-eye"></i> <span>View Attendance</span>
+                                    </a>
+                                </li>
+                                
+                              </ul>
+                         </li> 
+
+                       
                          <li>
                             <a href="ParenstList.aspx">
                                <i class="fa fa-users"></i> <span>Parents List</span>
                             </a>
                         </li>    
                    
-                       
-                        <li>
-                            <a href="FillMarks.aspx">
-                               <i class="fa fa-list"></i> <span>Upload Marks</span>
-                            </a>
-                        </li> 
-                          <li>
-                            <a href="ViewUploadedMarks.aspx">
-                               <i class="fa fa-eye"></i> <span>View Uploaded Marks</span>
-                            </a>
-                        </li> 
+                        <li class="treeview">
+                            <a href=""><i class="fa fa-th-large"></i><span>Marks Management</span><i class="fa fa-angle-left pull-right"></i></a>
+                             <ul class="treeview-menu">
+                                 <li>
+                                    <a href="FillMarks.aspx">
+                                       <i class="fa fa-list"></i> <span>Upload Marks</span>
+                                    </a>
+                                </li> 
+                                  <li>
+                                    <a href="ViewUploadedMarks.aspx">
+                                       <i class="fa fa-eye"></i> <span>View Uploaded Marks</span>
+                                    </a>
+                                </li> 
+                                
+                              </ul>
+                         </li> 
+
+
+                     
                          <li> 
                             <a href="ViewFeedBackAnswer.aspx">
                                <i class="fa fa-star"></i> <span>View Feedback Answer</span>

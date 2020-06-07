@@ -209,7 +209,7 @@ public partial class Admin_Attendance : System.Web.UI.Page
                 {
                     csedept.ExecuteScalar("insert into AttendanceTbl values ('" + AttID + "','" + hdStudentID.Value + "','" + ddlSubjects.SelectedValue + "','0','" + createdDate + "',NULL,'1')");
                 }
-                Page.ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Well done! You have successfully Done Operation.');window.location='Attendance.aspx';", true);
+                Page.ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Well done! You have successfully Done Operation.');window.location='ViewAttendance.aspx';", true);
             }
         }
         catch(Exception)

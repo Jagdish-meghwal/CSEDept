@@ -16,9 +16,7 @@
                 Error! Something goes wrong.
             </div> 
             <div class="box box-primary" style="min-height:400px">
-               <%-- <div class="box-header">
-                    <h3 class="box-title">All Product <span style="font-size:14px">(Sale and Deal Product not Included here)</span>  <a href="AddProduct.aspx" style="float:right" class="btn btn-dropbox">Add New Product</a> </h3> 
-                </div>--%>
+               
                 <div id="divProducts" runat="server">
                    <div class="row" style="padding:10px;">
                     <div  class="col-md-6">
@@ -62,7 +60,10 @@
                     </div>
                      
                      
-                <div class="box-body">                                 
+                <div class="box-body"> 
+                      <asp:Button ID="btnAllExport" CssClass="btn btn-success right" style="float:right;margin-top:-25px" runat="server" 
+                        Text="Export All to Excel" onclick="btnAllExport_Click" Visible="false"></asp:Button>
+                    <br />
                     <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto">
                   
                      

@@ -51,10 +51,10 @@
                                     <a href="../Faculty/Default.aspx" class="btn btn-primary">Faculty</a>
                                 </div><br />
                                 <div class="col-md-12">
-                                    <a href="../Parents/ParentLogin.aspx" class="btn btn-primary">Parents</a>
+                                    <a href="../Parents/Default.aspx" class="btn btn-primary">Parents</a>
                                 </div><br />
                                 <div class="col-md-12">
-                                <a href="../Student/StudentLogin.aspx" class="btn btn-primary">Student</a>
+                                <a href="../Student/Default.aspx" class="btn btn-primary">Student</a>
                                 </div>
 							</div>								     		
 			        	</div> 			        	

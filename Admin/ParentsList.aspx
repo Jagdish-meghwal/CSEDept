@@ -50,7 +50,10 @@
                         <h3 class="box-title" id="listheading" runat="server"></h3> 
                     </div><!-- /.box-header -->
                     <div class="box-body">      
-                           
+                                               
+                      
+                        <asp:Button ID="btnAllExport" CssClass="btn btn-success right" style="float:right" runat="server" 
+                        Text="Export All to Excel" onclick="btnAllExport_Click" Visible="false"></asp:Button>
                         <div style="margin-top:5px;" class="col-md-12">                                        
                         <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto">
                         <div class="table-responsive">

@@ -22,6 +22,6 @@ public partial class Faculty_Faculty : System.Web.UI.MasterPage
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         Session.Abandon();
-        Response.Redirect("Default.aspx");
+        Response.Redirect("../Admin/Default.aspx");
     }
 }

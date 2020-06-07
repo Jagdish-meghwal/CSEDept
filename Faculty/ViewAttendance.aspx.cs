@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -110,6 +113,10 @@ public partial class Faculty_ViewAttendance : System.Web.UI.Page
         {
             grdDetails.DataSource = csedept.SelectQuery("select AttendanceTbl.StudentID, DepartmentTbl.DepartmentName,SubjectTbl.SubjectName, StudentTbl.RollNo, StudentTbl.Name, StudentTbl.Year, StudentTbl.Semester, AttendanceTbl.Status from StudentTbl inner join DepartmentTbl on StudentTbl.DeptID = DepartmentTbl.ID inner join AttendanceTbl on StudentTbl.ID = AttendanceTbl.StudentID inner join SubjectTbl on AttendanceTbl.SubID = SubjectTbl.ID where StudentTbl.DeptID = '" + ddlStudentDepartment.SelectedValue + "' and Year = '" + ddlStudentYear.SelectedValue + "' and Semester = '" + ddlStudentSemester.SelectedValue + "' and AttendanceTbl.SubID = '" + ddlSubjects.SelectedValue + "' and StudentTbl.IsActive = '1' and AttendanceTbl.CreateDate = '" + txtsearch.Text + "'");
             grdDetails.DataBind();
+            if(grdDetails.Rows.Count>0)
+            {
+                btnAllExport.Visible = true;
+            }
         }
         catch (Exception)
         { }
@@ -140,6 +147,35 @@ public partial class Faculty_ViewAttendance : System.Web.UI.Page
         catch (Exception)
         { }
     }
+
+    protected void btnAllExport_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+            dt = csedept.SelectQuery("select DepartmentTbl.DepartmentName,SubjectTbl.SubjectName, StudentTbl.RollNo, StudentTbl.Name, StudentTbl.Year, StudentTbl.Semester, AttendanceTbl.Status from StudentTbl inner join DepartmentTbl on StudentTbl.DeptID = DepartmentTbl.ID inner join AttendanceTbl on StudentTbl.ID = AttendanceTbl.StudentID inner join SubjectTbl on AttendanceTbl.SubID = SubjectTbl.ID where StudentTbl.DeptID = '" + ddlStudentDepartment.SelectedValue + "' and Year = '" + ddlStudentYear.SelectedValue + "' and Semester = '" + ddlStudentSemester.SelectedValue + "' and AttendanceTbl.SubID = '" + ddlSubjects.SelectedValue + "' and StudentTbl.IsActive = '1' and AttendanceTbl.CreateDate = '" + txtsearch.Text + "'");
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "StudentAttendanceTbl");
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                string fileName = "StudentAttendanceTbl" + DateTime.Now.ToString("dd-MMM-yyyy") + ".xlsx";
+                Response.AddHeader("content-disposition", "attachment;filename=" + fileName + "");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
+        catch (Exception ex)
+        { }
+    }
+
     protected void grdDetails_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try

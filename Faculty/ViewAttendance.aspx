@@ -69,7 +69,10 @@
                     </div>
                      
                      
-                <div class="box-body">                                 
+                <div class="box-body">
+                      <asp:Button ID="btnAllExport" CssClass="btn btn-success right" style="float:right" runat="server" 
+                        Text="Export All to Excel" onclick="btnAllExport_Click" Visible="false"></asp:Button>
+                    <div style="margin-top:5px;" class="col-md-12">   
                     <asp:Panel ID="Panel2" runat="server" ScrollBars="Auto">
                   
                      
@@ -83,7 +86,8 @@
                             <PagerStyle CssClass="grd" HorizontalAlign="Left" />
                         </asp:GridView>
                         </div>
-                    </asp:Panel>     
+                    </asp:Panel> 
+                       </div>
                 </div><!-- /.box-body -->
                 </div>
             </div><!-- /.box -->
